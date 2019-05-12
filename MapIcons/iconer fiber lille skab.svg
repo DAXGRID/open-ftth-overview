@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW Home & Student 2018 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="9.8454mm" height="18.082mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 38.01 69.81"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:black;stroke-width:1.93;stroke-miterlimit:22.9256}
+    .fil1 {fill:none}
+    .fil2 {fill:black}
+    .fil0 {fill:#E6E6E6}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <rect class="fil0" x="6.47" y="0.96" width="30.58" height="62.58"/>
+  <rect class="fil0 str0" x="0.96" y="6.26" width="30.58" height="62.58"/>
+  <polyline class="fil1 str0" points="31.54,68.84 37.05,63.54 37.05,0.97 6.47,0.97 0.97,6.27 "/>
+  <line class="fil1 str0" x1="31.54" y1="6.27" x2="37.05" y2= "0.97" />
+  <rect class="fil2 str0" x="8.82" y="9.69" width="11.75" height="3.69"/>
+  <line class="fil1 str0" x1="0.97" y1="64.4" x2="31.54" y2= "64.4" />
+  <line class="fil1 str0" x1="31.54" y1="63.54" x2="37.05" y2= "58.03" />
+ </g>
+</svg>
