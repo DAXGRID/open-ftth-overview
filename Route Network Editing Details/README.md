@@ -2,7 +2,7 @@ Route Network Editing Commands and Events
 ==============================
 
 
-Use Case 1: New Route Segment Digitized by User
+Use Case 1: New lonely route segment digitized by User
 -------------------
 The user draws a new route segment in the map, that don’t start or end at any existing route nodes or crosses any existing route segments
 
@@ -95,6 +95,7 @@ Again the system has to help the user, because graph-wise it's illegal to add an
   "Geometry": "[[578810,6179700],[578820,6179690]]"
 }
 ```
+
 Notice that the command type is the same as the previous use case, but the command id has changed.
 
-In this example we can derive that the user has drawn a polyline starting at N2 and down to N3, because the from node of the new segment is poiting to N2. If the user had started drawing from where N3 is located and to N2, then the from and to node id's would have been swapped.
+In this example we can derive that the user has drawn a polyline starting at N2 and down to N3, because the from node of the new segment is pointing to N2. If the user had started drawing from where N3 is located and to up to N2, then the from and to node would have been swapped.
