@@ -61,3 +61,40 @@ Applying the events in the route network topic to a graph in order, and the grap
 
 If the edit command of the user cannot be translated into one or more route network events that individually can be applied to a graph with success, then the events must not be added to the topic!
 
+Use Case 2: New route segment digitized from/to an existing node by user
+-------------------
+The user draws a new route segment where one end is snapped to an existing route node.
+
+![image text](Images/segment-digitized-from-existing-node.png)
+
+Again the system has to help the user, because graph-wise it's illegal to add an edge (mapped to route segment) without having two vertices (mapped to route nodes). So we need to add the missing node first.
+
+**Events emitted to event.route-network topic:**
+
+```yaml
+{
+  "EventType": "RouteNodeAdded",
+  "EventId": "f4bffaf5-c772-4507-91ed-b3b80632aa71",
+  "EventTs": "2020-06-28T10:54:01Z",
+  "CmdType": "NewRouteSegmentDigitizedByUser",
+  "CmdId": "C2",
+  "NodeId": "N3",
+  "Geometry": "[578820,6179690]"
+}
+
+```yaml
+{
+  "EventType": "RouteSegmentAdded",
+  "EventId": "03de6f0d-6660-4a21-bb11-20c406a15c37",
+  "EventTs": "2020-06-28T10:53:02Z",
+  "CmdType": "NewRouteSegmentDigitizedByUser",
+  "CmdId": "C2",
+  "SegmentId": "S2",
+  "FromNodeId": "N2",
+  "ToNodeId": "N3",
+  "Geometry": "[[578810,6179700],[578820,6179690]]"
+}
+```
+Notice that the command type is the same as the previous use case, but the command id has changed.
+
+In this example we can derive that the user has drawn a polyline starting at N2 and down to N3, because the from node of the new segment is poiting to N2. If the user had started drawing from where N3 is located and to N2, then the from and to node id's would have been swapped.
