@@ -127,3 +127,77 @@ Here the system don't have to add any additional objects.
 }
 ```
 
+Use Case 4: Existing route segment splitted by a new route node drawn by the user
+-------------------
+The user draws a new route node on top of an existing route segment.
+
+Maybe the user want to register a well that has been etablized on some existing underground route due to a digging hazzard.
+
+![image text](Images/segment-splitted-by-node.png)
+
+Here the system has to create two new route segments replacing the splitted route segment.
+
+**Events emitted to event.route-network topic:**
+
+```yaml
+{
+  "EventType": "RouteNodeAdded",
+  "EventId": "ba5f596c-8642-4265-8138-858c034ce958",
+  "EventTs": "2020-06-28T10:55:01Z",
+  "CmdType": "ExistingRouteSegmentSplittedByUser",
+  "CmdId": "C4",
+  "NodeId": "N4",
+  "Geometry": "[578805, 6179700]"
+}
+```
+
+```yaml
+{
+  "EventType": "RouteSegmentAdded",
+  "EventId": "5103eac7-5699-47f6-95e8-8b2d79b8a364",
+  "EventTs": "2020-06-28T10:55:02Z",
+  "CmdType": "ExistingRouteSegmentSplittedByUser",
+  "CmdId": "C4",
+  "SegmentId": "S5",
+  "FromNodeId": "N1",
+  "ToNodeId": "N4",
+  "Geometry": "[[578800,6179700],[578805, 6179700]]"
+}
+```
+
+```yaml
+{
+  "EventType": "RouteSegmentAdded",
+  "EventId": "7be7098f-04fb-4728-a127-2801327567eb",
+  "EventTs": "2020-06-28T10:55:03Z",
+  "CmdType": "ExistingRouteSegmentSplittedByUser",
+  "CmdId": "C4",
+  "SegmentId": "S5",
+  "FromNodeId": "N4",
+  "ToNodeId": "N2",
+  "Geometry": "[[578805,6179700],[578810, 6179700]]"
+}
+```
+
+```yaml
+{
+  "EventType": "RouteSegmentRemoved",
+  "EventId": "2e916489-f97e-4684-acfe-2b02af9ed988",
+  "EventTs": "2020-06-28T10:55:04Z",
+  "CmdType": "ExistingRouteSegmentSplittedByUser",
+  "CmdId": "C4",
+  "SegmentId": "S1",
+  "ReplacedBySegments": ["S4, S5"]
+}
+```
+
+Notice the order:
+
+1. The new node is created
+2. The two new segments replacing the old one is created
+3. The old segment is removed
+
+The order and the property: "ReplacedBySegments" is important, because it allows a consumer the has relation to segment S1 to "clean up".
+
+As an example, there could be conduits related to segment S1 - i.e. running in a underground route from N1 to N3 - maintained in a seperate graph.
+A consumer dealing with such a conduit graph can then swap relations to S1 with relations to S3 and S4 pretty easily, when it recieves a RouteSegmentRemoved.
