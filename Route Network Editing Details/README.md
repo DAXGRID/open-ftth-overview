@@ -158,7 +158,7 @@ Here the system has to create two new route segments replacing the splitted rout
   "EventTs": "2020-06-28T10:55:02Z",
   "CmdType": "ExistingRouteSegmentSplittedByUser",
   "CmdId": "C4",
-  "SegmentId": "S5",
+  "SegmentId": "S4",
   "FromNodeId": "N1",
   "ToNodeId": "N4",
   "Geometry": "[[578800,6179700],[578805, 6179700]]"
@@ -197,7 +197,7 @@ Notice the order:
 2. The two new segments replacing the old one is created
 3. The old segment is removed
 
-The order and the property: "ReplacedBySegments" is important, because it allows a consumer the has relation to segment S1 to "clean up".
+The order and the property: "ReplacedBySegments" is important, because it allows a consumer the might have relations to segment S1 to "clean up".
 
-As an example, there could be conduits related to segment S1 - i.e. running in a underground route from N1 to N3 - maintained in a seperate graph.
+As an example, there could be conduits related to route segment S1 - i.e. running in a underground route from N1 to N2 - maintained in a seperate graph.
 A consumer dealing with such a conduit graph can then swap relations to S1 with relations to S3 and S4 pretty easily, when it recieves a RouteSegmentRemoved.
