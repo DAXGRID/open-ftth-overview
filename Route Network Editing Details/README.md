@@ -1,15 +1,16 @@
-Route Network Editing Commands and Events
+Route Network Editing Commands and Events (Happy Paths)
 ==============================
 
 
-Use Case 1: New lonely route segment digitized by User
+Use Case 1: New lonely route segment digitized by user
 -------------------
 The user draws a new route segment in the map, that don’t start or end at any existing route nodes or crosses any existing route segments
 
 ![image text](Images/lonely-route-segment-digitized.png)
 
 Now, because the route network is mapped to a graph (vertices and edges), the system must help the user create eventually missing nodes.
-In this case, both ends of the drawn route segment in not snapped to any existing route nodes, so two new route nodes must be added to the route network event topic before the route segment draw by the user is added.
+
+In this case, both ends of the drawn route segment in not snapped to any existing route nodes, so two new route nodes must be added to the route network event topic before the route segment drawn by the user can be added.
 
 **Events emitted to event.route-network topic:**
 
@@ -100,3 +101,29 @@ Again the system has to help the user, because graph-wise it's illegal to add an
 Notice that the command type is the same as the previous use case, but the command id has changed.
 
 In this example we can derive that the user has drawn a polyline starting at N2 and down to N3, because the from node of the new segment is pointing to N2. If the user had started drawing from where N3 is located and to up to N2, then the from and to node would have been swapped.
+
+
+Use Case 3: New route segment digitized between two existing nodes
+-------------------
+The user draws a new route segment between two existings nodes.
+
+![image text](Images/segment-digitized-between-existing-nodes.png)
+
+Here the system don't have to add any additional objects.
+
+**Events emitted to event.route-network topic:**
+
+```yaml
+{
+  "EventType": "RouteSegmentAdded",
+  "EventId": "3c80690f-6179-4e8e-b358-8faedd16f2e4",
+  "EventTs": "2020-06-28T10:54:01Z",
+  "CmdType": "NewRouteSegmentDigitizedByUser",
+  "CmdId": "C3",
+  "SegmentId": "S3",
+  "FromNodeId": "N2",
+  "ToNodeId": "N3",
+  "Geometry": "[[578810,6179700], more intermediate coordinates,[578820,6179690]]"
+}
+```
+
