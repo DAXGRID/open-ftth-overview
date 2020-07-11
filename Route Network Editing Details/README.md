@@ -205,10 +205,11 @@ A consumer dealing with such a conduit graph can then swap relations to S1 with 
 Use Case 5: Existing route segment split by one end belonging to a new segment drawn by the user
 -------------------
 The user draws a new segment having one end intersecting with an existing segment.
-It's convenient for the user that the system allows them to execute these two commands in one drawing operation.
 In practice the geographical editing would be set up to use snap, so that segment ends snaps to segment edges.
 
-From the perspective of the events we like to record, it's just a combination of use case 2 and 5: First, an existing route segment is split by a node (use case 5); then a new route segment is drawn to/from that node (use case 2). 
+Regarding the the events we record, it's just a combination of use case 5 and 2: First, an existing route segment is split by a node (use case 5); then a new route segment is drawn to/from that node (use case 2). It's convenient for the user of the system that they can execute these two commands by just drawing one polyline in the map.
+
+The reason it's preferable that this use case result in the same commands and events as produced by use case 5 and 2, is to avoid throwing too many different command and event types at the event consumers, which will just add more complexity to their implementation. The business logic of the consumers (i.e. some consumer verifying if any conduit or cable routes will be rendered invalid by route network editing) don't care if the user modified the route network using use case 5 following by use case 2, or this use case.
 
 ![image text](Images/segment-splitted-by-segment-1.png)
 
@@ -295,7 +296,5 @@ The second command, that adds N6 and a segment to N5.
   "Geometry": "[[578790, 6179695],[578815, 6179695]]"
 }
 ```
-If we should record that all the above was actually created as part of this paticular user interaction can be discussed.
-The reason I like this particular use case to result in the same events as produced by two simpler commands (use case 2 and 5), is to avoid throwing too many "weird" commands at the event consumers.
 
 
