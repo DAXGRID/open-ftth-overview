@@ -10,7 +10,7 @@ The user draws a new route segment in the map, that don’t start or end at any 
 
 Now, because the route network is mapped to a graph (vertices and edges), the system must help the user create eventually missing nodes.
 
-In this case, both ends of the drawn route segment in not snapped to any existing route nodes, so two new route nodes must be added to the route network event topic before the route segment drawn by the user can be added.
+In this case, both ends of the drawn route segment is not snapped to any existing route nodes, so two new route nodes must be added to the route network event topic before the route segment drawn by the user can be added.
 
 **Events emitted to event.route-network topic:**
 
@@ -105,7 +105,7 @@ In this example we can derive that the user has drawn a polyline starting at N2 
 
 Use Case 3: New route segment digitized between two existing nodes
 -------------------
-The user draws a new route segment between two existings nodes.
+The user draws a new route segment between two existing nodes.
 
 ![image text](Images/segment-digitized-between-existing-nodes.png)
 
@@ -199,5 +199,102 @@ Notice the order:
 
 The order and the property: "ReplacedBySegments" is important, because it allows a consumer the might have relations to segment S1 to "clean up".
 
-As an example, there could be conduits related to route segment S1 - i.e. running in a underground route from N1 to N2 - maintained in a seperate graph.
-A consumer dealing with such a conduit graph can then swap relations to S1 with relations to S3 and S4 pretty easily, when it recieves a RouteSegmentRemoved.
+As an example, there could be conduits related to route segment S1 - i.e. running in an underground route from N1 to N2 - maintained in a separate graph.
+A consumer dealing with such a conduit graph can then swap relations to S1 with relations to S3 and S4 pretty easily when it receives a RouteSegmentRemoved.
+
+Use Case 5: Existing route segment split by one end belonging to a new segment drawn by the user
+-------------------
+The user draws a new segment having one end intersecting with an existing segment.
+In practice the geographical editing would be set up to use snap, so that segment ends snaps to segment edges.
+
+Regarding the the events we record, it's just a combination of use case 5 and 2: First, an existing route segment is split by a node (use case 5); then a new route segment is drawn to/from that node (use case 2). It's convenient for the user of the system that they can execute these two commands by just drawing one polyline in the map.
+
+The reason it's preferable that this use case result in the same commands and events as produced by use case 5 and 2, is to avoid throwing too many different command and event types at the event consumers, which will just add more complexity to their implementation. The business logic of the consumers (i.e. some consumer verifying if any conduit or cable routes will be rendered invalid by route network editing) don't care if the user modified the route network using use case 5 following by use case 2, or this use case.
+
+![image text](Images/segment-splitted-by-segment-1.png)
+
+**Events emitted to event.route-network topic:**
+
+The first command, that split segment S2:
+
+```yaml
+{
+  "EventType": "RouteNodeAdded",
+  "EventId": "0448e29d-1512-4547-bf4d-378cd0926fb4",
+  "EventTs": "2020-07-11T16:07:01Z",
+  "CmdType": "ExistingRouteSegmentSplittedByUser",
+  "CmdId": "C5",
+  "NodeId": "N5",
+  "Geometry": "[578815, 6179695]"
+}
+```
+
+```yaml
+{
+  "EventType": "RouteSegmentAdded",
+  "EventId": "9ee44243-125f-4ef4-9c43-4cb2fb33cfc8",
+  "EventTs": "2020-07-11T16:07:02Z",
+  "CmdType": "ExistingRouteSegmentSplittedByUser",
+  "CmdId": "C5",
+  "SegmentId": "S7",
+  "FromNodeId": "N5",
+  "ToNodeId": "N4",
+  "Geometry": "[[578810,6179700],[578815, 6179695]]"
+}
+```
+
+```yaml
+{
+  "EventType": "RouteSegmentAdded",
+  "EventId": "481fd31d-84d4-4a02-806b-fd3e50d8d339",
+  "EventTs": "2020-07-11T16:07:03Z",
+  "CmdType": "ExistingRouteSegmentSplittedByUser",
+  "CmdId": "C5",
+  "SegmentId": "S8",
+  "FromNodeId": "N5",
+  "ToNodeId": "N3",
+  "Geometry": "[[578815, 6179695],[578820,6179690]]"
+}
+```
+
+```yaml
+{
+  "EventType": "RouteSegmentRemoved",
+  "EventId": "55b61a5b-fa86-4d12-9867-d7def873f959",
+  "EventTs": "2020-07-11T16:07:04Z",
+  "CmdType": "ExistingRouteSegmentSplittedByUser",
+  "CmdId": "C5",
+  "SegmentId": "S2",
+  "ReplacedBySegments": ["S7, S8"]
+}
+```
+
+The second command, that adds N6 and a segment to N5.
+
+```yaml
+{
+  "EventType": "RouteNodeAdded",
+  "EventId": "3bd0720a-6145-4303-8934-8ad6c644a4e4",
+  "EventTs": "2020-07-11T16:07:05Z",
+  "CmdType": "NewRouteSegmentDigitizedByUser",
+  "CmdId": "C6",
+  "NodeId": "N6",
+  "Geometry": "[578790, 6179695]"
+}
+```
+
+```yaml
+{
+  "EventType": "RouteSegmentAdded",
+  "EventId": "18d1f079-be87-46ad-9fbb-112b7546509e",
+  "EventTs": "2020-07-11T16:07:06Z",
+  "CmdType": "NewRouteSegmentDigitizedByUser",
+  "CmdId": "C6",
+  "SegmentId": "S6",
+  "FromNodeId": "N6",
+  "ToNodeId": "N5",
+  "Geometry": "[[578790, 6179695],[578815, 6179695]]"
+}
+```
+
+
