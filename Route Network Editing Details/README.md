@@ -209,7 +209,7 @@ In practice the geographical editing would be set up to use snap, so that segmen
 
 Regarding the the events we record, it's just a combination of use case 4 and 2: First, an existing route segment is split by a node (use case 4); then a new route segment is drawn to/from that node (use case 2). It's convenient for the user of the system that they can execute these two commands by just drawing one polyline in the map.
 
-The reason it's preferable that this use case result in the same commands and events as produced by use case 4 and 2, is to avoid throwing too many different command and event types at the event consumers, which will just add more complexity to their implementation. The business logic of the consumers (i.e. some consumer verifying if any conduit or cable routes will be rendered invalid by route network editing) don't care if the user modified the route network using use case 5 following by use case 2, or this use case.
+The reason it's preferable that this use case result in the same commands and events as produced by use case 4 and 2, is to avoid throwing too many different command and event types at the event consumers, which will just add more complexity to their implementation. The business logic of the consumers (i.e. some consumer verifying if any conduit or cable routes will be rendered invalid by route network editing) don't care if the user modified the route network using use case 4 following by use case 2, or this use case.
 
 ![image text](Images/segment-splitted-by-segment-1.png)
 
@@ -297,4 +297,12 @@ The second command, that adds N6 and a segment to N5.
 }
 ```
 
+Use Case 6: Existing route segment splitted by both end belonging to a new segment drawn by the user
+-------------------
+The user draws a new segment having both ends intersecting with an existing segment.
+
+![image text](Images/segment-splitted-by-segment-2.png)
+
+In this case the system will first do two splits (same as use case 4) and lastly add the segment (same as use case 2).
+Again to shield the event consumers for needed to know a lot of business rules regarding map editing.
 
