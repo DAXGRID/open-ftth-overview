@@ -362,7 +362,7 @@ Events belonging to the first split command (that split segment S6):
 }
 ```
 
-Events belonging to the second first split command (that split segment S11, that was creates as part of the split command above):
+Events belonging to the second first split command (that split segment S11, that was created as part of the split command above):
 
 ```yaml
 {
@@ -415,6 +415,24 @@ Events belonging to the second first split command (that split segment S11, that
   "ReplacedBySegments": ["S12, S13"]
 }
 ```
+
+The last command, that adds S9.
+
+```yaml
+{
+  "EventType": "RouteSegmentAdded",
+  "EventId": "18d1f079-be87-46ad-9fbb-112b7546509e",
+  "EventTs": "2020-07-13T10:15:09Z",
+  "CmdType": "NewRouteSegmentDigitizedByUser",
+  "CmdId": "C9",
+  "SegmentId": "S9",
+  "FromNodeId": "N7",
+  "ToNodeId": "N8",
+  "Geometry": "geojson..."
+}
+```
+
+
 
 
 
