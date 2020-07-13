@@ -303,6 +303,123 @@ The user draws a new segment having both ends intersecting with an existing segm
 
 ![image text](Images/segment-splitted-by-segment-2.png)
 
-In this case the system will first do two splits (same as use case 4) and lastly add the segment (same as use case 2).
-Again to shield the event consumers for needed to know a lot of business rules regarding map editing.
+In this case the system will first do two split commands (same as use case 4) and lastly one add segment command (same as use case 2).
+Again to shield the event consumers for needing to know a lot of business rules.
+
+**Events emitted to event.route-network topic:**
+
+Events belonging to the first split command (that split segment S6):
+
+```yaml
+{
+  "EventType": "RouteNodeAdded",
+  "EventId": "0448e29d-1512-4547-bf4d-378cd0926fb4",
+  "EventTs": "2020-07-13T10:15:01Z",
+  "CmdType": "ExistingRouteSegmentSplittedByUser",
+  "CmdId": "C7",
+  "NodeId": "N7",
+  "Geometry": "geojson..."
+}
+```
+
+```yaml
+{
+  "EventType": "RouteSegmentAdded",
+  "EventId": "9ee44243-125f-4ef4-9c43-4cb2fb33cfc8",
+  "EventTs": "2020-07-13T10:15:02Z",
+  "CmdType": "ExistingRouteSegmentSplittedByUser",
+  "CmdId": "C7",
+  "SegmentId": "S10",
+  "FromNodeId": "N6",
+  "ToNodeId": "N7",
+  "Geometry": "geojson..."
+}
+```
+
+```yaml
+{
+  "EventType": "RouteSegmentAdded",
+  "EventId": "481fd31d-84d4-4a02-806b-fd3e50d8d339",
+  "EventTs": "2020-07-13T10:15:03Z",
+  "CmdType": "ExistingRouteSegmentSplittedByUser",
+  "CmdId": "C7",
+  "SegmentId": "S11",
+  "FromNodeId": "N7",
+  "ToNodeId": "N5",
+  "Geometry": "geojson..."
+}
+```
+
+```yaml
+{
+  "EventType": "RouteSegmentRemoved",
+  "EventId": "55b61a5b-fa86-4d12-9867-d7def873f959",
+  "EventTs": "2020-07-13T10:15:04Z",
+  "CmdType": "ExistingRouteSegmentSplittedByUser",
+  "CmdId": "C7",
+  "SegmentId": "S6",
+  "ReplacedBySegments": ["S10, S11"]
+}
+```
+
+Events belonging to the second first split command (that split segment S11, that was creates as part of the split command above):
+
+```yaml
+{
+  "EventType": "RouteNodeAdded",
+  "EventId": "0448e29d-1512-4547-bf4d-378cd0926fb4",
+  "EventTs": "2020-07-13T10:15:05Z",
+  "CmdType": "ExistingRouteSegmentSplittedByUser",
+  "CmdId": "C8",
+  "NodeId": "N8",
+  "Geometry": "geojson..."
+}
+```
+
+```yaml
+{
+  "EventType": "RouteSegmentAdded",
+  "EventId": "9ee44243-125f-4ef4-9c43-4cb2fb33cfc8",
+  "EventTs": "2020-07-13T10:15:06Z",
+  "CmdType": "ExistingRouteSegmentSplittedByUser",
+  "CmdId": "C8",
+  "SegmentId": "S12",
+  "FromNodeId": "N7",
+  "ToNodeId": "N8",
+  "Geometry": "geojson..."
+}
+```
+
+```yaml
+{
+  "EventType": "RouteSegmentAdded",
+  "EventId": "481fd31d-84d4-4a02-806b-fd3e50d8d339",
+  "EventTs": "2020-07-13T10:15:07Z",
+  "CmdType": "ExistingRouteSegmentSplittedByUser",
+  "CmdId": "C8",
+  "SegmentId": "S13",
+  "FromNodeId": "N8",
+  "ToNodeId": "N5",
+  "Geometry": "geojson..."
+}
+```
+
+```yaml
+{
+  "EventType": "RouteSegmentRemoved",
+  "EventId": "55b61a5b-fa86-4d12-9867-d7def873f959",
+  "EventTs": "2020-07-13T10:15:08Z",
+  "CmdType": "ExistingRouteSegmentSplittedByUser",
+  "CmdId": "C8",
+  "SegmentId": "S11",
+  "ReplacedBySegments": ["S12, S13"]
+}
+```
+
+
+
+
+
+
+
 
