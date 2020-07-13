@@ -586,7 +586,20 @@ Deleting the route segment S10 would then destroy the integrity of the overall n
 The way we deal with this is to mark the segment for deletion. 
 In the map, we can choose not to show the segments marked for deletion or make them grey.
 
-** What will happen asynchronously behind the scenes **
+**Events emitted to event.route-network topic:**
+
+```yaml
+{
+  "EventType": "RouteSegmentMarkedForDeletion",
+  "EventId": "55b61a5b-fa86-4d12-9867-d7def873f959",
+  "EventTs": "2020-07-13T14:01:01Z",
+  "CmdType": "RouteSegmentDeletedByUser",
+  "CmdId": "C10",
+  "SegmentId": "S10",
+}
+```
+
+**What will then happen asynchronously behind the scenes**
 
 A validation coordinator service will listen on RouteSegmentMarkedForDeletion events, and will make sure that all registered route network validation services are asked if it's okay to delete that segment. 
 
@@ -596,6 +609,18 @@ If one of the validation services says no, then we have a conflict that must be 
 No RouteSegmentRemoved will then be added to the events.route-network topic, so the route segment will still be there, so network model integrity is not broken.
 How conflicts are reported to the user, and how they resolve it, is out of scope and of no interest to the route network editing functionality.
 
+**Events emitted to event.route-network topic by the validator fi/when it's safe to remove the segment:**
+
+```yaml
+{
+  "EventType": "RouteSegmentRemoved",
+  "EventId": "55b61a5b-fa86-4d12-9867-d7def873f959",
+  "EventTs": "2020-07-13T14:01:02Z",
+  "CmdType": "RouteSegmentDeletedByUser",
+  "CmdId": "C10",
+  "SegmentId": "S10",
+}
+```
 
 
 
