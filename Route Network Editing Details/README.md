@@ -587,16 +587,14 @@ The way we deal with this is to mark the segment for deletion.
 In the map, we can choose not to show the segments marked for deletion or make them grey.
 
 ** What will happen asynchronously behind the scenes **
-A coordinating service listens on RouteSegmentMarkedForDeletion events will make sure that all route network validation services are asked if it's okay to delete that segment. 
 
-If all answer yes, a RouteSegmentDeleted is added to the events.route-network topic and the segment can be deleted for real. 
+A validation coordinator service will listen on RouteSegmentMarkedForDeletion events, and will make sure that all registered route network validation services are asked if it's okay to delete that segment. 
+
+If all validation services says yes, the validation coordinator will add a RouteSegmentRemoved to the events.route-network topic, and the segment can treated as deleted in all the route network event consumers.
 
 If one of the validation services says no, then we have a conflict that must be handled by a user. 
-No RouteSegmentDeleted will be added to the events.route-network topic, so the route segment will still be there, so network model integrity is not broken.
-
-How conflicts are reported to the user, and how they resolve it, is out of scope and of no interest to the route network editing functionality. 
-
-
+No RouteSegmentRemoved will then be added to the events.route-network topic, so the route segment will still be there, so network model integrity is not broken.
+How conflicts are reported to the user, and how they resolve it, is out of scope and of no interest to the route network editing functionality.
 
 
 
