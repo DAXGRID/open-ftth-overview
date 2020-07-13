@@ -571,20 +571,23 @@ The last command, that adds S9.
 }
 ```
 
+Use Case 8: Route segment deleted by user
+-------------------
+The user deletes a route segment in the map.
 
+![image text](Images/segment-deleted-1.png)
 
+From a graph point of view, deleting a segment is always a legal operation.
+However, the problem is that there might objects related to a route segment. 
 
+As an example there might be a conduit running from N6 to N3 (parsing through S10, N7, S11, N5 and S8).
+Deleting the route segment S10 would then destoy the integrity of the overall network model.
 
+The way we deal with this is to just mark the segment for deletion. A coordinating service listen on the RouteSegmentMarkedForDeletion events and will make sure that all route network validation services are asked if it's okay to delete that segment. If all answer yes, a RouteSegmentDeleted is added to the events.route-network topic and the segment can be deleted for real. If one of the validation services says no, then we have a conflict that must be handled by a user. 
+No RouteSegmentDeleted will be added to the events.route-network topic, so the route segment will still be there, so network model integrity is not broken.
+How that conflict is reported to the user, and how they resolve it, is out of scope and of no interest to the route network editing functionality. 
 
-
-
-
-
-
-
-
-
-
+In the map we can choose to not show the segements marked for deletion or make them gray.
 
 
 
