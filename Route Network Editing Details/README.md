@@ -581,10 +581,11 @@ From a graph point of view, deleting a segment is always a legal operation.
 However, the problem is that there may be objects related to a route segment.
 
 As an example, there might be a conduit running from N6 to N3 (parsing through S10, N7, S11, N5 and S8).
-Deleting the route segment S10 would then destroy the integrity of the overall network model.
+Deleting the route segment S10 would then destroy the integrity of the overall network model from a business rule perspective.
+The way we deal with such potential conflicts is to just mark the segment for deletion, and wait for the route network editing validation service to actually delete it.
 
-The way we deal with this is to mark the segment for deletion. 
-In the map, we can choose not to show the segments marked for deletion or make them grey.
+In the map, we can choose to make them grey, so the user can see that he/she has marked something for deletion.
+However, in most places (i.e. technician web etc.) we would show the segment as usual, until it is actually deleted. 
 
 **Events emitted to event.route-network topic:**
 
@@ -599,17 +600,20 @@ In the map, we can choose not to show the segments marked for deletion or make t
 }
 ```
 
-**What will then happen asynchronously behind the scenes**
+**What will happen asynchronously behind the scenes**
 
-A validation coordinator service will listen on RouteSegmentMarkedForDeletion events, and will make sure that all registered route network validation services are asked if it's okay to delete that segment. 
+A validation coordinator service will listen on RouteSegmentMarkedForDeletion events, and will make sure that all registered route network validation services are asked if it's okay to delete the segment. 
 
-If all validation services says yes, the validation coordinator will add a RouteSegmentRemoved to the events.route-network topic, and the segment can treated as deleted in all the route network event consumers.
+If all validation services says yes, the validation coordinator will add a RouteSegmentRemoved to the event.route-network topic, and the segment can be treated as deleted in all the route network event consumers. 
 
 If one of the validation services says no, then we have a conflict that must be handled by a user. 
-No RouteSegmentRemoved will then be added to the events.route-network topic, so the route segment will still be there, so network model integrity is not broken.
-How conflicts are reported to the user, and how they resolve it, is out of scope and of no interest to the route network editing functionality.
+No RouteSegmentRemoved will then be added to the event.route-network topic, so the route segment will still be there, and the network model integrity is not broken.
 
-**Events emitted to event.route-network topic by the validator fi/when it's safe to remove the segment:**
+How validators report conflicts to the user, and how the user resolves them, is of no interest to the route network editing functionality (GDB integrator). It just waits for a RouteSegmentRemoved event, and delete the segment if such one is recieved.
+
+When no conflict, the expected behaviour is that the segment will be deleted efter a few seconds, after all the validators has been run.
+
+**Events emitted to event.route-network topic by the validator logic if/when it's safe to remove the segment:**
 
 ```yaml
 {
