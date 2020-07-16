@@ -626,6 +626,40 @@ When no conflict, the expected behaviour is that the segment will be deleted eft
 }
 ```
 
+Use Case 9: Route node deleted by user
+-------------------
+The user deletes a route node in the map.
 
+![image text](Images/node-deleted-1.png)
 
+Works pretty much like use case 8. However, from a graph point of view deleting a node is **only** a legal operation if no edges are connected to the node.
+In other words, the user operation must fail, and no events should be written the event.route_network topic, unless the node is disconnected from other objects in the graph like N6.
+
+If any of the other nodes in the example are deleted by the user, that should result in an error, and the deletion should be reverted in the map view. That is, the marked_for_deletion flag must be flipped from true to false in underlying data source, and the user should be informed about the illegal operation.
+
+**Events emitted to event.route-network topic:**
+
+```yaml
+{
+  "EventType": "RouteNodeMarkedForDeletion",
+  "EventId": "30cf550b-6dc1-41a1-abb7-c99a5993c2e0",
+  "EventTs": "2020-07-16T12:00:01Z",
+  "CmdType": "RouteNodeDeletedByUser",
+  "CmdId": "C11",
+  "NodeId": "N6",
+}
+```
+
+**Events emitted to event.route-network topic by the validator logic if/when it's safe to remove the node:**
+
+```yaml
+{
+  "EventType": "RouteNodeRemoved",
+  "EventId": "5718016e-f3c0-416a-af2c-6377bf9682e6",
+  "EventTs": "2020-07-16T12:00:02Z",
+  "CmdType": "RouteNodeDeletedByUser",
+  "CmdId": "C11",
+  "NodeId": "N6",
+}
+```
 
