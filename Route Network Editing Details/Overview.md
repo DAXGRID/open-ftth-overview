@@ -3,6 +3,7 @@
           <td colspan=3>
             <img width=1000/>
             <h2>UC 1: New lonely route segment digitized by user</h2>
+            <img width=600 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/lonely-route-segment-digitized.png">
            </td>
         </tr>
         <tr>
@@ -12,15 +13,15 @@
         </tr>
         <tr>
             <td rowspan=3>NewRouteSegmentDigitizedByUser</td>
-            <td>RouteNodeAdded</td>
+            <td>RouteNodeAdded (N1)</td>
             <td>Insert missing node in database</td>
         </tr>
         <tr>
-            <td>RouteNodeAdded</td>
+            <td>RouteNodeAdded (N2)</td>
             <td>Insert missing node in database</td>
         </tr>
         <tr>
-            <td>RouteSegmentAdded</td>
+            <td>RouteSegmentAdded (S1)</td>
             <td></td>
         </tr>
 </table>
