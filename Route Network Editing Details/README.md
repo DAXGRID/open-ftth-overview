@@ -663,3 +663,58 @@ If any of the other nodes in the example are deleted by the user, that should re
 }
 ```
 
+Use Case 10: Segment end disconnected from node by user
+-------------------
+The user change segment connectivity by means of modifying its geometry.
+
+![image text](Images/segment-end-disconnected-1.png)
+
+When the user do such an operation, we mark the old one to be deleted and create a new segment with the new connectivity and geometry.
+
+The reason for this, is that there might be conduits and cables running through the segment that the user had fiddled with - which is why just we just mark it for deletion and let the validation logic figure out if it's save to delete it.
+
+Notice the order of the events below. We create the new node and segment first, and mark the old for deletion last. This way the validation consumers has all the information needed to do checking and conflict resolution when they recieve the RouteSegmentMarkedForDeletion event. Also notice the replacedBySegments property, which is a convenient proberty for the consumers to do their job without having to record events are part of a command.
+
+**Events emitted to event.route-network topic:**
+
+```yaml
+{
+  "EventType": "RouteNodeAdded",
+  "EventId": "f4bffaf5-c772-4507-91ed-b3b80632aa71",
+  "EventTs": "2020-07-16T12:10:01Z",
+  "CmdType": "RouteSegmentConnetivityChangedByUser",
+  "CmdId": "C12",
+  "NodeId": "N9",
+  "Geometry": "geojson..."
+}
+```
+
+```yaml
+{
+  "EventType": "RouteSegmentAdded",
+  "EventId": "5103eac7-5699-47f6-95e8-8b2d79b8a364",
+  "EventTs": "2020-07-16T12:10:02Z",
+  "CmdType": "RouteSegmentConnetivityChangedByUser",
+  "CmdId": "C12",
+  "SegmentId": "S12",
+  "FromNodeId": "N5",
+  "ToNodeId": "N9",
+  "Geometry": "geojson..."
+}
+```
+
+```yaml
+{
+  "EventType": "RouteSegmentMarkedForDeletion",
+  "EventId": "30cf550b-6dc1-41a1-abb7-c99a5993c2e0",
+  "EventTs": "2020-07-16T12:10:03Z",
+  "CmdType": "RouteSegmentConnetivityChangedByUser",
+  "CmdId": "C12",
+  "SegmentId": "S11",
+  "ReplacedBySegments": ["S12"]
+}
+```
+
+
+
+
