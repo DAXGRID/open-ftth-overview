@@ -41,11 +41,11 @@
         </tr>
         <tr>
             <td rowspan=3>NewRouteSegmentDigitizedByUser</td>
-            <td>RouteNodeAdded</td>
+            <td>RouteNodeAdded (N3)</td>
             <td>Insert missing node in database</td>
         </tr>
         <tr>
-            <td>RouteSegmentAdded</td>
+            <td>RouteSegmentAdded (S2)</td>
             <td></td>
         </tr>
 </table>
@@ -66,7 +66,7 @@
         </tr>
         <tr>
             <td rowspan=3>NewRouteSegmentDigitizedByUser</td>
-            <td>RouteSegmentAdded</td>
+            <td>RouteSegmentAdded (S3)</td>
             <td></td>
         </tr>
 </table>
@@ -87,19 +87,19 @@
         </tr>
         <tr>
             <td rowspan=4>ExistingRouteSegmentSplittedByUser</td>
-            <td>RouteNodeAdded</td>
+            <td>RouteNodeAdded (N4)</td>
             <td></td>
         </tr>
         <tr>
-            <td>RouteSegmentAdded</td>
+            <td>RouteSegmentAdded (S4)</td>
             <td>Insert segment (first part of splitted segment)</td>
         </tr>
         <tr>
-            <td>RouteSegmentAdded</td>
+            <td>RouteSegmentAdded (S5)</td>
             <td>Insert segment (second part of splitted segment)</td>
         </tr>
         <tr>
-            <td>RouteSegmentRemoved</td>
+            <td>RouteSegmentRemoved (S1)</td>
             <td>Delete (the splitted) segment from database</td>
         </tr>        
 </table>
@@ -120,28 +120,28 @@
         </tr>
         <tr>
             <td rowspan=4>ExistingRouteSegmentSplittedByUser</td>
-            <td>RouteNodeAdded</td>
+            <td>RouteNodeAdded (N5)</td>
             <td>Insert missing node (that's splitting the segment)</td>
         </tr>
         <tr>
-            <td>RouteSegmentAdded</td>
+            <td>RouteSegmentAdded (S7)</td>
             <td>Insert segment (first part of splitted segment)</td>
         </tr>
         <tr>
-            <td>RouteSegmentAdded</td>
+            <td>RouteSegmentAdded (S8)</td>
             <td>Insert segment (second part of splitted segment)</td>
         </tr>
         <tr>
-            <td>RouteSegmentRemoved</td>
+            <td>RouteSegmentRemoved (S2)</td>
             <td>Delete (the splitted) segment from database</td>
         </tr>        
         <tr>
             <td rowspan=2>NewRouteSegmentDigitizedByUser</td>
-            <td>RouteNodeAdded</td>
+            <td>RouteNodeAdded (N6)</td>
             <td>Insert missing node</td>
         </tr>
         <tr>
-            <td>RouteSegmentAdded</td>
+            <td>RouteSegmentAdded (S6)</td>
             <td></td>
         </tr>
 </table>
@@ -206,7 +206,7 @@
 <table>
         <tr>
          <td colspan=3 width=1000>
-            <h2>UC 7: Two existing route segments are splitted by ends belonging to a new segment drawn by the user/h2>
+            <h2>UC 7: Two existing route segments are splitted by ends belonging to a new segment drawn by the user</h2>
             <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/segment-splitted-by-segment-3.png">
            </td>
         </tr>
