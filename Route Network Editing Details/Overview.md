@@ -257,6 +257,28 @@
 </table>
 
 
+<br><br><br><br>
+
+<table>
+        <tr>
+         <td colspan=3 width=1000>
+            <h2>UC 8: Route segment deleted by user</h2>
+            <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/segment-deleted-1.png">
+           </td>
+        </tr>
+        <tr>
+            <td width=354><b>Command(s)</b></td>
+            <td width=354><b>Event(s)</b></td>
+            <td width=354><b>Database operation(s)</b></td>
+        </tr>
+        <tr>
+            <td rowspan=1>RouteSegmentDeletedByUser</td>
+            <td>RouteSegmentMarkedForDeletion (S10) </td>
+            <td></td>
+        </tr>
+</table>
+
+
 
 
 
