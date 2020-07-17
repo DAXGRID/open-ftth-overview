@@ -162,41 +162,41 @@
         </tr>
         <tr>
             <td rowspan=4>ExistingRouteSegmentSplittedByUser</td>
-            <td>RouteNodeAdded</td>
+            <td>RouteNodeAdded (N7)</td>
             <td>Insert missing node (that's splitting the segment)</td>
         </tr>
         <tr>
-            <td>RouteSegmentAdded</td>
+            <td>RouteSegmentAdded (S10)</td>
             <td>Insert segment (first part of splitted segment)</td>
         </tr>
         <tr>
-            <td>RouteSegmentAdded</td>
+            <td>RouteSegmentAdded (S11)</td>
             <td>Insert segment (second part of splitted segment)</td>
         </tr>
         <tr>
-            <td>RouteSegmentRemoved</td>
+            <td>RouteSegmentRemoved (S6)</td>
             <td>Delete (the splitted) segment from database</td>
         </tr>        
         <tr>
             <td rowspan=4>ExistingRouteSegmentSplittedByUser</td>
-            <td>RouteNodeAdded</td>
+            <td>RouteNodeAdded (N8)</td>
             <td>Insert missing node (that's splitting the segment)</td>
         </tr>
         <tr>
-            <td>RouteSegmentAdded</td>
+            <td>RouteSegmentAdded (S12)</td>
             <td>Insert segment (first part of splitted segment)</td>
         </tr>
         <tr>
-            <td>RouteSegmentAdded</td>
+            <td>RouteSegmentAdded (S13)</td>
             <td>Insert segment (second part of splitted segment)</td>
         </tr>
         <tr>
-            <td>RouteSegmentRemoved</td>
+            <td>RouteSegmentRemoved (S11)</td>
             <td>Delete (the splitted) segment from database</td>
         </tr>                
         <tr>
             <td rowspan=2>NewRouteSegmentDigitizedByUser</td>
-            <td>RouteSegmentAdded</td>
+            <td>RouteSegmentAdded (S9)</td>
             <td></td>
         </tr>
 </table>
@@ -217,41 +217,41 @@
         </tr>
         <tr>
             <td rowspan=4>ExistingRouteSegmentSplittedByUser</td>
-            <td>RouteNodeAdded</td>
+            <td>RouteNodeAdded (N7) </td>
             <td>Insert missing node (that's splitting the segment)</td>
         </tr>
         <tr>
-            <td>RouteSegmentAdded</td>
+            <td>RouteSegmentAdded (S10)</td>
             <td>Insert segment (first part of splitted segment)</td>
         </tr>
         <tr>
-            <td>RouteSegmentAdded</td>
+            <td>RouteSegmentAdded (S11)</td>
             <td>Insert segment (second part of splitted segment)</td>
         </tr>
         <tr>
-            <td>RouteSegmentRemoved</td>
+            <td>RouteSegmentRemoved (S6)</td>
             <td>Delete (the splitted) segment from database</td>
         </tr>        
         <tr>
             <td rowspan=4>ExistingRouteSegmentSplittedByUser</td>
-            <td>RouteNodeAdded</td>
+            <td>RouteNodeAdded (N8)</td>
             <td>Insert missing node (that's splitting the segment)</td>
         </tr>
         <tr>
-            <td>RouteSegmentAdded</td>
+            <td>RouteSegmentAdded (S12)</td>
             <td>Insert segment (first part of splitted segment)</td>
         </tr>
         <tr>
-            <td>RouteSegmentAdded</td>
+            <td>RouteSegmentAdded (S13)</td>
             <td>Insert segment (second part of splitted segment)</td>
         </tr>
         <tr>
-            <td>RouteSegmentRemoved</td>
+            <td>RouteSegmentRemoved (S3)</td>
             <td>Delete (the splitted) segment from database</td>
         </tr>                
         <tr>
             <td rowspan=2>NewRouteSegmentDigitizedByUser</td>
-            <td>RouteSegmentAdded</td>
+            <td>RouteSegmentAdded (S9)</td>
             <td></td>
         </tr>
 </table>
