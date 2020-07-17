@@ -307,6 +307,7 @@
         <tr>
          <td colspan=3 width=1000>
             <h2>UC 10: Segment end disconnected from node by user</h2>
+            Notice that the user change segment connectivity by means of modifying its geometry.
             <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/segment-end-disconnected-1.png">
            </td>
         </tr>
@@ -323,6 +324,39 @@
         <tr>
             <td>RouteSegmentAdded (S12)</td>
             <td>Insert a clone of S11 with new geometry and connectivity (connected to N5 and N9)</td>
+        </tr>
+        <tr>
+            <td>RouteSegmentMarkedForDeletion (S11)</td>
+            <td>Revert geometry to how the segment looked like before user edited it, and mark it to be deleted in the database</td>
+        </tr>
+</table>
+
+<br><br><br><br>
+
+<table>
+        <tr>
+         <td colspan=3 width=1000>
+            <h2>UC 11: Segment disconnected from both of its nodes by user</h2>
+            <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/segment-end-disconnected-2.png">
+           </td>
+        </tr>
+        <tr>
+            <td width=354><b>Command(s)</b></td>
+            <td width=354><b>Event(s)</b></td>
+            <td width=354><b>Database operation(s)</b></td>
+        </tr>
+        <tr>
+            <td rowspan=4>RouteSegmentConnetivityChangedByUser</td>
+            <td>RouteNodeAdded (N9) </td>
+            <td>Insert missing node</td>
+        </tr>
+        <tr>
+            <td>RouteNodeAdded (N10)</td>
+            <td>Insert missing node</td>
+        </tr>
+        <tr>
+            <td>RouteSegmentAdded (S12)</td>
+            <td>Insert a clone of S11 with new geometry and connectivity (connected to N9 and N10)</td>
         </tr>
         <tr>
             <td>RouteSegmentMarkedForDeletion (S11)</td>
