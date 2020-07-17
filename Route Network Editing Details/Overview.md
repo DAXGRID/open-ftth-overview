@@ -26,6 +26,7 @@
         </tr>
 </table>
 
+<br><br><br><br>
 
 <table>
         <tr>
@@ -50,6 +51,8 @@
             <td></td>
         </tr>
 </table>
+
+<br><br><br><br>
 
 <table>
         <tr>
@@ -103,6 +106,7 @@
         </tr>        
 </table>
 
+<br><br><br><br>
 
 <table>
         <tr>
@@ -145,6 +149,7 @@
         </tr>
 </table>
 
+<br><br><br><br>
 
 <table>
         <tr>
@@ -152,6 +157,62 @@
           <img width=1000/>
             <h2>UC 6: Existing route segment splitted by both end belonging to a new segment drawn by the user</h2>
             <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/segment-splitted-by-segment-2.png">
+           </td>
+        </tr>
+        <tr>
+            <td width=354><b>Command(s)</b></td>
+            <td width=354><b>Event(s)</b></td>
+            <td width=354><b>Database operation(s)</b></td>
+        </tr>
+        <tr>
+            <td rowspan=4>ExistingRouteSegmentSplittedByUser</td>
+            <td>RouteNodeAdded</td>
+            <td>Insert missing node (that's splitting the segment)</td>
+        </tr>
+        <tr>
+            <td>RouteSegmentAdded</td>
+            <td>Insert segment (first part of splitted segment)</td>
+        </tr>
+        <tr>
+            <td>RouteSegmentAdded</td>
+            <td>Insert segment (second part of splitted segment)</td>
+        </tr>
+        <tr>
+            <td>RouteSegmentRemoved</td>
+            <td>Delete (the splitted) segment from database</td>
+        </tr>        
+        <tr>
+            <td rowspan=4>ExistingRouteSegmentSplittedByUser</td>
+            <td>RouteNodeAdded</td>
+            <td>Insert missing node (that's splitting the segment)</td>
+        </tr>
+        <tr>
+            <td>RouteSegmentAdded</td>
+            <td>Insert segment (first part of splitted segment)</td>
+        </tr>
+        <tr>
+            <td>RouteSegmentAdded</td>
+            <td>Insert segment (second part of splitted segment)</td>
+        </tr>
+        <tr>
+            <td>RouteSegmentRemoved</td>
+            <td>Delete (the splitted) segment from database</td>
+        </tr>                
+        <tr>
+            <td rowspan=2>NewRouteSegmentDigitizedByUser</td>
+            <td>RouteSegmentAdded</td>
+            <td></td>
+        </tr>
+</table>
+
+<br><br><br><br>
+
+<table>
+        <tr>
+          <td colspan=3>
+          <img width=1000/>
+            <h2>UC 7: Two existing route segments are splitted by ends belonging to a new segment drawn by the user/h2>
+            <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/segment-splitted-by-segment-3.png">
            </td>
         </tr>
         <tr>
