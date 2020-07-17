@@ -1,7 +1,6 @@
 <table>
         <tr>
-          <td colspan=3>
-            <img width=1000/>
+          <td colspan=3 width=1000>
             <h2>UC 1: New lonely route segment digitized by user</h2>
             <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/lonely-route-segment-digitized.png">
            </td>
@@ -30,8 +29,7 @@
 
 <table>
         <tr>
-          <td colspan=3>
-          <img width=1000/>
+          <td colspan=3 width=1000>
             <h2>UC 2: New route segment digitized from/to an existing node by user</h2>
             <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/segment-digitized-from-existing-node.png">
            </td>
@@ -56,8 +54,7 @@
 
 <table>
         <tr>
-          <td colspan=3>
-          <img width=1000/>
+          <td colspan=3 width=1000>
             <h2>UC 3: New route segment digitized between two existing nodes</h2>
             <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/segment-digitized-between-existing-nodes.png">
            </td>
@@ -74,10 +71,11 @@
         </tr>
 </table>
 
+<br><br><br><br>
+
 <table>
         <tr>
-          <td colspan=3>
-          <img width=1000/>
+          <td colspan=3 width=1000>
             <h2>UC 4: Existing route segment splitted by a new route node drawn by the user</h2>
             <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/segment-splitted-by-node.png">
            </td>
@@ -110,8 +108,7 @@
 
 <table>
         <tr>
-          <td colspan=3>
-          <img width=1000/>
+          <td colspan=3 width=1000>
             <h2>UC 5: Existing route segment split by one end belonging to a new segment drawn by the user</h2>
             <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/segment-splitted-by-segment-1.png">
            </td>
@@ -153,8 +150,7 @@
 
 <table>
         <tr>
-          <td colspan=3>
-          <img width=1000/>
+          <td colspan=3 width=1000>
             <h2>UC 6: Existing route segment splitted by both end belonging to a new segment drawn by the user</h2>
             <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/segment-splitted-by-segment-2.png">
            </td>
@@ -209,8 +205,7 @@
 
 <table>
         <tr>
-          <td colspan=3>
-          <img width=1000/>
+         <td colspan=3 width=1000>
             <h2>UC 7: Two existing route segments are splitted by ends belonging to a new segment drawn by the user/h2>
             <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/segment-splitted-by-segment-3.png">
            </td>
