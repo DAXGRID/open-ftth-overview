@@ -322,7 +322,7 @@
         </tr>
         <tr>
             <td>RouteSegmentAdded (S12)</td>
-            <td>Insert segment (clone of S11 but with new geometry)</td>
+            <td>Insert a clone of S11 with new geometry and connectivity (connected to N5 and N9)</td>
         </tr>
         <tr>
             <td>RouteSegmentMarkedForDeletion (S11)</td>
