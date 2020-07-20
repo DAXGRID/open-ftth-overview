@@ -256,6 +256,8 @@
         </tr>
 </table>
 
+<br><br><br><br>
+
 <table>
         <tr>
          <td colspan=3 width=1000>
@@ -291,7 +293,6 @@
             <td>Delete (the splitted) segment from database</td>
         </tr>                
 </table>
-
 
 <br><br><br><br>
 
@@ -426,7 +427,54 @@
         </tr>
         <tr>
             <td>RouteNodeMarkedForDeletion (N1)</td>
-            <td>Mark N1 to be deleted, but only of degree = 0 (no long connected to any edges) and name and kind is null</td>
+            <td>Mark N1 to be deleted, but only if degree = 0 (no long connected to any edges) and name and kind is null</td>
+        </tr>
+</table>
+
+
+<br><br><br><br>
+
+<table>
+        <tr>
+         <td colspan=3 width=1000>
+            <h2>UC 14: Segment end disconnected and reconnected to segment edge</h2>
+            <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/segment-disconnect-reconnect-to-edge.png">
+           </td>
+        </tr>
+        <tr>
+            <td width=354><b>Command(s)</b></td>
+            <td width=354><b>Event(s)</b></td>
+            <td width=354><b>Database operation(s)</b></td>
+        </tr>
+        <tr>
+            <td rowspan=4>ExistingRouteSegmentSplittedByUser</td>
+            <td>RouteNodeAdded (N12)</td>
+            <td>Insert missing node (that's splitting the segment)</td>
+        </tr>
+        <tr>
+            <td>RouteSegmentAdded (S16)</td>
+            <td>Insert segment (first part of splitted segment)</td>
+        </tr>
+        <tr>
+            <td>RouteSegmentAdded (S17)</td>
+            <td>Insert segment (second part of splitted segment)</td>
+        </tr>
+        <tr>
+            <td>RouteSegmentRemoved (S14)</td>
+            <td>Delete (the splitted) segment from database</td>
+        </tr>                
+        <tr>
+            <td rowspan=4>RouteSegmentConnetivityChangedByUser</td>
+            <td>RouteSegmentAdded (S15) </td>
+            <td>Insert a clone of S4 but with new geometry and connectivity (connected to N4 and N12)</td>
+        </tr>
+        <tr>
+            <td>RouteSegmentMarkedForDeletion (S4)</td>
+            <td>Revert geometry to how the segment looked like before user edited it, and mark it to be deleted in the database</td>
+        </tr>
+        <tr>
+            <td>RouteNodeMarkedForDeletion (N1)</td>
+            <td>Mark N1 to be deleted, but only if degree = 0 (no long connected to any edges) and name and kind is null</td>
         </tr>
 </table>
 
