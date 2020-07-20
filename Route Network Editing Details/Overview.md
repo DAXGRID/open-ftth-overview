@@ -256,13 +256,49 @@
         </tr>
 </table>
 
+<table>
+        <tr>
+         <td colspan=3 width=1000>
+            <h2>UC 8: New segment split due to intersecting nodes</h2>
+            <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/segment-split-due-to-nodes.png">
+           </td>
+        </tr>
+        <tr>
+            <td width=354><b>Command(s)</b></td>
+            <td width=354><b>Event(s)</b></td>
+            <td width=354><b>Database operation(s)</b></td>
+        </tr>
+        <tr>
+            <td rowspan=2>NewRouteSegmentDigitizedByUser</td>
+            <td>RouteNodeAdded (N7) </td>
+            <td>Insert missing node</td>
+        </tr>
+        <tr>
+            <td>RouteSegmentAdded (S9)</td>
+            <td>Insert segment</td>
+        </tr>
+        <tr>
+            <td rowspan=3>ExistingRouteSegmentSplittedByUser</td>
+            <td>RouteSegmentAdded (S10)</td>
+            <td>Insert segment (first part of splitted segment)</td>
+        </tr>
+        <tr>
+            <td>RouteSegmentAdded (S11)</td>
+            <td>Insert segment (second part of splitted segment)</td>
+        </tr>
+        <tr>
+            <td>RouteSegmentRemoved (S9)</td>
+            <td>Delete (the splitted) segment from database</td>
+        </tr>                
+</table>
+
 
 <br><br><br><br>
 
 <table>
         <tr>
          <td colspan=3 width=1000>
-            <h2>UC 8: Route segment deleted by user</h2>
+            <h2>UC 9: Route segment deleted by user</h2>
             <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/segment-deleted-1.png">
            </td>
         </tr>
@@ -284,7 +320,7 @@
 <table>
         <tr>
          <td colspan=3 width=1000>
-            <h2>UC 9: Route node deleted by user</h2>
+            <h2>UC 10: Route node deleted by user</h2>
             <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/node-deleted-1.png">
            </td>
         </tr>
@@ -306,7 +342,7 @@
 <table>
         <tr>
          <td colspan=3 width=1000>
-            <h2>UC 10: Segment end disconnected from node by user</h2>
+            <h2>UC 11: Segment end disconnected from node by user</h2>
             Notice that the user change segment connectivity by means of modifying its geometry.
             <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/segment-end-disconnected-1.png">
            </td>
@@ -336,7 +372,7 @@
 <table>
         <tr>
          <td colspan=3 width=1000>
-            <h2>UC 11: Segment disconnected from both of its nodes by user</h2>
+            <h2>UC 12: Segment disconnected from both of its nodes by user</h2>
             <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/segment-end-disconnected-2.png">
            </td>
         </tr>
