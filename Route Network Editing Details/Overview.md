@@ -401,6 +401,36 @@
 </table>
 
 
+<br><br><br><br>
+
+<table>
+        <tr>
+         <td colspan=3 width=1000>
+            <h2>UC 13: Segment end disconnected and reconnected to another node</h2>
+            <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/segment-disconnect-reconnect-to-node.png">
+           </td>
+        </tr>
+        <tr>
+            <td width=354><b>Command(s)</b></td>
+            <td width=354><b>Event(s)</b></td>
+            <td width=354><b>Database operation(s)</b></td>
+        </tr>
+        <tr>
+            <td rowspan=4>RouteSegmentConnetivityChangedByUser</td>
+            <td>RouteSegmentAdded (S15) </td>
+            <td>Insert a clone of S4 but with new geometry and connectivity (connected to N4 and N9)</td>
+        </tr>
+        <tr>
+            <td>RouteSegmentMarkedForDeletion (S4)</td>
+            <td>Revert geometry to how the segment looked like before user edited it, and mark it to be deleted in the database</td>
+        </tr>
+        <tr>
+            <td>RouteNodeMarkedForDeletion (N1)</td>
+            <td>Mark N1 to be deleted, but only of degree = 0 (no long connected to any edges) and name and kind is null</td>
+        </tr>
+</table>
+
+
 
 
 
