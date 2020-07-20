@@ -358,7 +358,7 @@
             <td>Insert missing node</td>
         </tr>
         <tr>
-            <td>RouteSegmentAdded (S12)</td>
+            <td>RouteSegmentAdded (S14)</td>
             <td>Insert a clone of S11 with new geometry and connectivity (connected to N5 and N9)</td>
         </tr>
         <tr>
@@ -391,7 +391,7 @@
             <td>Insert missing node</td>
         </tr>
         <tr>
-            <td>RouteSegmentAdded (S12)</td>
+            <td>RouteSegmentAdded (S14)</td>
             <td>Insert a clone of S11 with new geometry and connectivity (connected to N9 and N10)</td>
         </tr>
         <tr>
