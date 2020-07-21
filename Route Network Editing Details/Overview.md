@@ -494,9 +494,88 @@
             <td width=354><b>Database operation(s)</b></td>
         </tr>
         <tr>
-            <td rowspan=4>RouteSegmentGeometryModifiedByUser</td>
+            <td rowspan=4>RouteSegmentLocationChangedByUser</td>
             <td>RouteSegmentGeometryModified (S14) </td>
             <td></td>
+        </tr>
+</table>
+
+
+<br><br><br><br>
+
+<table>
+        <tr>
+         <td colspan=3 width=1000>
+            <h2>UC 16: New route node digitized by user</h2>
+            <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/new-node.png">
+            <br>
+            If new node is closer than tolerance to an existing node, the opreration must fail.
+           </td>
+        </tr>
+        <tr>
+            <td width=354><b>Command(s)</b></td>
+            <td width=354><b>Event(s)</b></td>
+            <td width=354><b>Database operation(s)</b></td>
+        </tr>
+        <tr>
+            <td rowspan=4>NewRouteNodeDigitizedByUser</td>
+            <td>RouteNodeAdded (N4) </td>
+            <td></td>
+        </tr>
+</table>
+
+<br><br><br><br>
+
+<table>
+        <tr>
+         <td colspan=3 width=1000>
+            <h2>UC 17: Route node without connecting segments moved by user</h2>
+            <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/move-node-1.png">
+            <br>
+            If the node is moved closer than tolerance to an existing node, the opreration must fail.
+           </td>
+        </tr>
+        <tr>
+            <td width=354><b>Command(s)</b></td>
+            <td width=354><b>Event(s)</b></td>
+            <td width=354><b>Database operation(s)</b></td>
+        </tr>
+        <tr>
+            <td rowspan=4>RouteNodeLocationChangedByUser</td>
+            <td>RouteNodeGeometryModified(N4) </td>
+            <td></td>
+        </tr>
+</table>
+
+
+<br><br><br><br>
+
+<table>
+        <tr>
+         <td colspan=3 width=1000>
+            <h2>UC 17: Route node with connecting segments moved by user</h2>
+            <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/move-node-2.png">
+            <br>
+            If the node is moved closer than tolerance to an existing node, the opreration must fail.
+           </td>
+        </tr>
+        <tr>
+            <td width=354><b>Command(s)</b></td>
+            <td width=354><b>Event(s)</b></td>
+            <td width=354><b>Database operation(s)</b></td>
+        </tr>
+        <tr>
+            <td rowspan=4>RouteNodeLocationChangedByUser</td>
+            <td>RouteNodeGeometryModified (N2) </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>RouteSegmentGeometryModified (S1) </td>
+            <td>The coordinate of the segment end previously connected to the node is changed to the nodes new position</td>
+        </tr>
+        <tr>
+            <td>RouteSegmentGeometryModified (S2) </td>
+            <td>The coordinate of the segment end previously connected to the node is changed to the nodes new position</td>
         </tr>
 </table>
 
