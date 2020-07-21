@@ -553,7 +553,7 @@
 <table>
         <tr>
          <td colspan=3 width=1000>
-            <h2>UC 17: Route node with connecting segments moved by user</h2>
+            <h2>UC 18: Route node with connecting segments moved by user</h2>
             <img width=800 src="https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/Route%20Network%20Editing%20Details/Images/move-node-2.png">
             <br>
             If the node is moved closer than tolerance to an existing node, the opreration must fail.
