@@ -11,7 +11,7 @@
             <td width=354><b>Database operation(s)</b></td>
         </tr>
         <tr>
-            <td rowspan=3>NewRouteSegmentDigitizedByUser</td>
+            <td rowspan=3>NewRouteSegmentDigitized</td>
             <td>RouteNodeAdded (N1)</td>
             <td>Insert missing node in database</td>
         </tr>
@@ -40,7 +40,7 @@
             <td width=354><b>Database operation(s)</b></td>
         </tr>
         <tr>
-            <td rowspan=3>NewRouteSegmentDigitizedByUser</td>
+            <td rowspan=3>NewRouteSegmentDigitized</td>
             <td>RouteNodeAdded (N3)</td>
             <td>Insert missing node in database</td>
         </tr>
@@ -65,7 +65,7 @@
             <td width=354><b>Database operation(s)</b></td>
         </tr>
         <tr>
-            <td rowspan=3>NewRouteSegmentDigitizedByUser</td>
+            <td rowspan=3>NewRouteSegmentDigitized</td>
             <td>RouteSegmentAdded (S3)</td>
             <td></td>
         </tr>
@@ -86,7 +86,7 @@
             <td width=354><b>Database operation(s)</b></td>
         </tr>
         <tr>
-            <td rowspan=4>ExistingRouteSegmentSplittedByUser</td>
+            <td rowspan=4>ExistingRouteSegmentSplitted</td>
             <td>RouteNodeAdded (N4)</td>
             <td></td>
         </tr>
@@ -119,7 +119,7 @@
             <td width=354><b>Database operation(s)</b></td>
         </tr>
         <tr>
-            <td rowspan=4>ExistingRouteSegmentSplittedByUser</td>
+            <td rowspan=4>ExistingRouteSegmentSplitted</td>
             <td>RouteNodeAdded (N5)</td>
             <td>Insert missing node (that's splitting the segment)</td>
         </tr>
@@ -136,7 +136,7 @@
             <td>Delete (the splitted) segment from database</td>
         </tr>        
         <tr>
-            <td rowspan=2>NewRouteSegmentDigitizedByUser</td>
+            <td rowspan=2>NewRouteSegmentDigitized</td>
             <td>RouteNodeAdded (N6)</td>
             <td>Insert missing node</td>
         </tr>
@@ -161,7 +161,7 @@
             <td width=354><b>Database operation(s)</b></td>
         </tr>
         <tr>
-            <td rowspan=4>ExistingRouteSegmentSplittedByUser</td>
+            <td rowspan=4>ExistingRouteSegmentSplitted</td>
             <td>RouteNodeAdded (N7)</td>
             <td>Insert missing node (that's splitting the segment)</td>
         </tr>
@@ -178,7 +178,7 @@
             <td>Delete (the splitted) segment from database</td>
         </tr>        
         <tr>
-            <td rowspan=4>ExistingRouteSegmentSplittedByUser</td>
+            <td rowspan=4>ExistingRouteSegmentSplitted</td>
             <td>RouteNodeAdded (N8)</td>
             <td>Insert missing node (that's splitting the segment)</td>
         </tr>
@@ -195,7 +195,7 @@
             <td>Delete (the splitted) segment from database</td>
         </tr>                
         <tr>
-            <td rowspan=2>NewRouteSegmentDigitizedByUser</td>
+            <td rowspan=2>NewRouteSegmentDigitized</td>
             <td>RouteSegmentAdded (S9)</td>
             <td></td>
         </tr>
@@ -216,7 +216,7 @@
             <td width=354><b>Database operation(s)</b></td>
         </tr>
         <tr>
-            <td rowspan=4>ExistingRouteSegmentSplittedByUser</td>
+            <td rowspan=4>ExistingRouteSegmentSplitted</td>
             <td>RouteNodeAdded (N7) </td>
             <td>Insert missing node (that's splitting the segment)</td>
         </tr>
@@ -233,7 +233,7 @@
             <td>Delete (the splitted) segment from database</td>
         </tr>        
         <tr>
-            <td rowspan=4>ExistingRouteSegmentSplittedByUser</td>
+            <td rowspan=4>ExistingRouteSegmentSplitted</td>
             <td>RouteNodeAdded (N8)</td>
             <td>Insert missing node (that's splitting the segment)</td>
         </tr>
@@ -250,7 +250,7 @@
             <td>Delete (the splitted) segment from database</td>
         </tr>                
         <tr>
-            <td rowspan=2>NewRouteSegmentDigitizedByUser</td>
+            <td rowspan=2>NewRouteSegmentDigitized</td>
             <td>RouteSegmentAdded (S9)</td>
             <td></td>
         </tr>
@@ -271,7 +271,7 @@
             <td width=354><b>Database operation(s)</b></td>
         </tr>
         <tr>
-            <td rowspan=2>NewRouteSegmentDigitizedByUser</td>
+            <td rowspan=2>NewRouteSegmentDigitized</td>
             <td>RouteNodeAdded (N7) </td>
             <td>Insert missing node</td>
         </tr>
@@ -280,7 +280,7 @@
             <td>Insert segment</td>
         </tr>
         <tr>
-            <td rowspan=3>ExistingRouteSegmentSplittedByUser</td>
+            <td rowspan=3>ExistingRouteSegmentSplitted</td>
             <td>RouteSegmentAdded (S10)</td>
             <td>Insert segment (first part of splitted segment)</td>
         </tr>
@@ -309,7 +309,7 @@
             <td width=354><b>Database operation(s)</b></td>
         </tr>
         <tr>
-            <td rowspan=1>RouteSegmentDeletedByUser</td>
+            <td rowspan=1>RouteSegmentDeleted</td>
             <td>RouteSegmentMarkedForDeletion (S10) </td>
             <td></td>
         </tr>
@@ -331,7 +331,7 @@
             <td width=354><b>Database operation(s)</b></td>
         </tr>
         <tr>
-            <td rowspan=1>RouteNodeDeletedByUser</td>
+            <td rowspan=1>RouteNodeDeleted</td>
             <td>RouteNodeMarkedForDeletion (N6) </td>
             <td></td>
         </tr>
@@ -354,7 +354,7 @@
             <td width=354><b>Database operation(s)</b></td>
         </tr>
         <tr>
-            <td rowspan=4>RouteSegmentConnetivityChangedByUser</td>
+            <td rowspan=4>RouteSegmentConnetivityChanged</td>
             <td>RouteNodeAdded (N9) </td>
             <td>Insert missing node</td>
         </tr>
@@ -383,7 +383,7 @@
             <td width=354><b>Database operation(s)</b></td>
         </tr>
         <tr>
-            <td rowspan=4>RouteSegmentConnetivityChangedByUser</td>
+            <td rowspan=4>RouteSegmentConnetivityChanged</td>
             <td>RouteNodeAdded (N9) </td>
             <td>Insert missing node</td>
         </tr>
@@ -417,7 +417,7 @@
             <td width=354><b>Database operation(s)</b></td>
         </tr>
         <tr>
-            <td rowspan=4>RouteSegmentConnetivityChangedByUser</td>
+            <td rowspan=4>RouteSegmentConnetivityChanged</td>
             <td>RouteSegmentAdded (S15) </td>
             <td>Insert a clone of S4 but with new geometry and connectivity (connected to N4 and N9)</td>
         </tr>
@@ -447,7 +447,7 @@
             <td width=354><b>Database operation(s)</b></td>
         </tr>
         <tr>
-            <td rowspan=4>ExistingRouteSegmentSplittedByUser</td>
+            <td rowspan=4>ExistingRouteSegmentSplitted</td>
             <td>RouteNodeAdded (N12)</td>
             <td>Insert missing node (that's splitting the segment)</td>
         </tr>
@@ -464,7 +464,7 @@
             <td>Delete (the splitted) segment from database</td>
         </tr>                
         <tr>
-            <td rowspan=4>RouteSegmentConnetivityChangedByUser</td>
+            <td rowspan=4>RouteSegmentConnetivityChanged</td>
             <td>RouteSegmentAdded (S15) </td>
             <td>Insert a clone of S4 but with new geometry and connectivity (connected to N4 and N12)</td>
         </tr>
@@ -494,7 +494,7 @@
             <td width=354><b>Database operation(s)</b></td>
         </tr>
         <tr>
-            <td rowspan=4>RouteSegmentLocationChangedByUser</td>
+            <td rowspan=4>RouteSegmentLocationChanged</td>
             <td>RouteSegmentGeometryModified (S14) </td>
             <td></td>
         </tr>
@@ -518,7 +518,7 @@
             <td width=354><b>Database operation(s)</b></td>
         </tr>
         <tr>
-            <td rowspan=4>NewRouteNodeDigitizedByUser</td>
+            <td rowspan=4>NewRouteNodeDigitized</td>
             <td>RouteNodeAdded (N4) </td>
             <td></td>
         </tr>
@@ -541,7 +541,7 @@
             <td width=354><b>Database operation(s)</b></td>
         </tr>
         <tr>
-            <td rowspan=4>RouteNodeLocationChangedByUser</td>
+            <td rowspan=4>RouteNodeLocationChanged</td>
             <td>RouteNodeGeometryModified(N4) </td>
             <td></td>
         </tr>
@@ -565,7 +565,7 @@
             <td width=354><b>Database operation(s)</b></td>
         </tr>
         <tr>
-            <td rowspan=4>RouteNodeLocationChangedByUser</td>
+            <td rowspan=4>RouteNodeLocationChanged</td>
             <td>RouteNodeGeometryModified (N2) </td>
             <td></td>
         </tr>
