@@ -1,0 +1,13 @@
+{
+   "SpanEquipmentId":"0ce19e78-8fdf-4819-b327-ccdd622932f3",
+   "SpecificationId":"6b66dac0-6d5d-4f89-b5a6-f21ec6462056",
+   "SpecificationVersionId": "1.0.0",
+   "MarkingInfo":{
+      "Color":"Red",
+      "Text":"Bla bla"
+   },
+   "RouteNetworkWalk":[
+      "4e15b729-84b4-4b1c-b2cd-023ac441e80d",
+      "3bce6c0d-9188-41c9-bc8e-cee5614472d7"
+   ]
+}
