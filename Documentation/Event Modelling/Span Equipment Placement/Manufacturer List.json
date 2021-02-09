@@ -1,12 +1,12 @@
 {
    "Manufacturer":[
       {
-         "Id":"b1739fef-222a-4508-a959-fed7b9fc7e73",
+         "ManufacturerId":"b1739fef-222a-4508-a959-fed7b9fc7e73",
          "Deprecated":"False",
          "Name":"GM Plast"
       },
       {
-         "Id":"326b1dd0-9f5b-4cc6-8def-552e615e4ae7",
+         "ManufacturerId":"326b1dd0-9f5b-4cc6-8def-552e615e4ae7",
          "Deprecated":"False",
          "Name":"Emtelle"
       }
