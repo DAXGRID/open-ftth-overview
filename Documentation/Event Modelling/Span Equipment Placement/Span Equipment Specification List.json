@@ -1,7 +1,7 @@
 {
    "SpanSpecifications":[
       {
-         "Id":"70b461f5-2c63-49de-b87f-3970d2226ce6",
+         "SpecificationId":"70b461f5-2c63-49de-b87f-3970d2226ce6",
          "Version":"1.0.0",
          "Category":"Conduits",
          "ShortName":"Ø12",
@@ -13,7 +13,7 @@
          ]
       },
       {
-         "Id":"633964db-6bfd-41f8-9af9-b4e55185ae24",
+         "SpecificationId":"633964db-6bfd-41f8-9af9-b4e55185ae24",
          "Version":"1.0.0",
          "Category":"Conduits",
          "ShortName":"Ø40 7x10",
@@ -25,7 +25,7 @@
          ]
       },
       {
-         "Id":"95eea298-5131-4d20-868e-213882dc5475",
+         "SpecificationId":"95eea298-5131-4d20-868e-213882dc5475",
          "Version":"1.0.0",
          "Category":"Conduits",
          "ShortName":"Flatliner 12x10",
