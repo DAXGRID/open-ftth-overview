@@ -912,8 +912,7 @@
         "icon-size": 0.4,
         "text-anchor": {"base": 1, "stops": [[0, "left"], [8, "center"]]},
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Open Sans Regular"]
-,
+        "text-font": ["Open Sans Regular"],
         "text-justify": "left",
         "text-offset": [0.5, 0.2],
         "text-size": 10,
@@ -1147,7 +1146,11 @@
       "source": "osm",
       "source-layer": "housenumber",
       "minzoom": 16,
-      "layout": {"text-field": "{housenumber}", "text-size": 14},
+      "layout": {
+        "text-field": "{housenumber}",
+        "text-size": 14,
+        "text-font": ["Open Sans Regular"]
+      },
       "paint": {
         "text-halo-width": 1,
         "text-halo-color": "rgba(255, 255, 255, 1)",
