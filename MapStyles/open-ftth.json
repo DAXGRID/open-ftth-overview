@@ -20,9 +20,38 @@
     "openmaptiles:version": "3.x",
     "maputnik:renderer": "mbgljs"
   },
-  
+  "sources": {
+    "basemap-danish": {
+      "type": "vector",
+      "tiles": [
+        "https://dev-tiles-basemap.openftth.com/services/objects/tiles/{z}/{x}/{y}.pbf"
+      ],
+      "minZoom": 0,
+      "maxZoom": 14,
+      "minzoom": 16,
+      "maxzoom": 16
+    },
+    "osm": {
+      "type": "vector",
+      "tiles": [
+        "https://dev-tiles-basemap.openftth.com/services/osm/tiles/{z}/{x}/{y}.pbf"
+      ],
+      "minZoom": 0,
+      "maxZoom": 14,
+      "maxzoom": 14
+    },
+    "route_network": {
+      "type": "vector",
+      "tiles": [
+        "https://test-tiles-routenetwork.aura-openftth.dk/services/route_network/tiles/{z}/{x}/{y}.pbf"
+      ],
+      "minZoom": 0,
+      "maxZoom": 14,
+      "maxzoom": 17
+    }
+  },
   "sprite": "https://raw.githubusercontent.com/DAXGRID/open-ftth-overview/master/MapIcons/Sprite/sprite",
-  "glyphs": "https://api.maptiler.com/fonts/{fontstack}/{range}.pbf?key={key}",
+  "glyphs": "https://fonts.openmaptiles.org/{fontstack}/{range}.pbf",
   "layers": [
     {
       "id": "background",
@@ -132,7 +161,7 @@
         "symbol-placement": "line",
         "symbol-spacing": 500,
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Metropolis Medium Italic", "Noto Sans Italic"],
+        "text-font": ["Open Sans Regular"],
         "text-rotation-alignment": "map",
         "text-size": 12
       },
@@ -661,7 +690,7 @@
         "symbol-placement": "line",
         "symbol-spacing": 350,
         "text-field": "{name:latin} {name:nonlatin}",
-        "text-font": ["Metropolis Regular", "Noto Sans Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-max-angle": 30,
         "text-pitch-alignment": "viewport",
         "text-rotation-alignment": "map",
@@ -692,7 +721,7 @@
         "symbol-placement": "line",
         "symbol-spacing": 350,
         "text-field": "{ref}",
-        "text-font": ["Metropolis Light", "Noto Sans Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-pitch-alignment": "viewport",
         "text-rotation-alignment": "viewport",
         "text-size": 10,
@@ -804,7 +833,7 @@
       "layout": {
         "text-anchor": "center",
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Metropolis Regular", "Noto Sans Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-justify": "center",
         "text-offset": [0.5, 0],
         "text-size": 10,
@@ -829,7 +858,7 @@
       "layout": {
         "text-anchor": "center",
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Metropolis Regular", "Noto Sans Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-justify": "center",
         "text-offset": [0.5, 0],
         "text-size": 10,
@@ -855,7 +884,7 @@
         "icon-size": 0.4,
         "text-anchor": "left",
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Metropolis Regular", "Noto Sans Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-justify": "left",
         "text-offset": [0.5, 0.2],
         "text-size": 10,
@@ -883,7 +912,8 @@
         "icon-size": 0.4,
         "text-anchor": {"base": 1, "stops": [[0, "left"], [8, "center"]]},
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Metropolis Regular", "Noto Sans Regular"],
+        "text-font": ["Open Sans Regular"]
+,
         "text-justify": "left",
         "text-offset": [0.5, 0.2],
         "text-size": 10,
@@ -915,7 +945,7 @@
         "icon-size": 0.4,
         "text-anchor": {"base": 1, "stops": [[0, "left"], [8, "center"]]},
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Metropolis Regular", "Noto Sans Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-justify": "left",
         "text-offset": [0.5, 0.2],
         "text-size": 10,
@@ -947,7 +977,7 @@
         "icon-size": 1,
         "text-anchor": {"base": 1, "stops": [[0, "left"], [8, "center"]]},
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Metropolis Regular", "Noto Sans Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-justify": "left",
         "text-offset": [0.5, 0.2],
         "text-size": 14,
@@ -984,7 +1014,7 @@
         "icon-size": 0.4,
         "text-anchor": {"base": 1, "stops": [[0, "left"], [8, "center"]]},
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Metropolis Regular", "Noto Sans Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-justify": "left",
         "text-offset": [0.5, 0.2],
         "text-size": 14,
@@ -1009,7 +1039,7 @@
       "filter": ["all", ["==", "$type", "Point"], ["==", "class", "state"]],
       "layout": {
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Metropolis Regular", "Noto Sans Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-size": 10,
         "text-transform": "uppercase",
         "visibility": "visible"
@@ -1036,7 +1066,7 @@
       ],
       "layout": {
         "text-field": "{name:latin}",
-        "text-font": ["Metropolis Light Italic", "Noto Sans Italic"],
+        "text-font": ["Open Sans Regular"],
         "text-size": {"base": 1, "stops": [[0, 9], [6, 11]]},
         "text-transform": "uppercase",
         "visibility": "visible"
@@ -1066,7 +1096,7 @@
       ],
       "layout": {
         "text-field": "{name:latin}",
-        "text-font": ["Metropolis Regular", "Noto Sans Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-size": {"base": 1, "stops": [[0, 10], [6, 12]]},
         "text-transform": "uppercase",
         "visibility": "visible"
@@ -1097,7 +1127,7 @@
       "layout": {
         "text-anchor": "center",
         "text-field": "{name:latin}",
-        "text-font": ["Metropolis Regular", "Noto Sans Regular"],
+        "text-font": ["Open Sans Regular"],
         "text-size": {"base": 1.4, "stops": [[0, 10], [3, 12], [4, 14]]},
         "text-transform": "uppercase",
         "visibility": "visible"
@@ -1204,7 +1234,7 @@
         "text-field": "{name}",
         "text-anchor": "bottom-left",
         "text-offset": [0.7, -0.3],
-        "text-font": ["Open Sans Regular", "Arial Unicode MS Regular"],
+        "text-font": ["Open Sans Regular"],
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
         "text-allow-overlap": true,
@@ -1228,7 +1258,7 @@
         "text-field": "{name}",
         "text-anchor": "bottom-left",
         "text-offset": [0.7, -0.3],
-        "text-font": ["Open Sans Regular", "Arial Unicode MS Regular"],
+        "text-font": ["Open Sans Regular"],
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
         "text-allow-overlap": true,
@@ -1258,7 +1288,7 @@
         "text-field": "{name}",
         "text-anchor": "bottom-left",
         "text-offset": [0.7, -0.3],
-        "text-font": ["Open Sans Regular", "Arial Unicode MS Regular"],
+        "text-font": ["Open Sans Regular"],
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
         "text-allow-overlap": true,
